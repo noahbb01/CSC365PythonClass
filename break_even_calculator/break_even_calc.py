@@ -67,6 +67,7 @@ Break_Evan_Cost5 = round((total_cost2 - Government_Payment) / Yield, 2)
 per_bushel_profit5 = round((Price - Break_Evan_Cost5), 2)
 
 # code for the formatting that we got from you debby
+# format for the vertical line column header
 print(f'{"":20s}'
       f'{"":15s}'
       f'{"10% Decrease":>15s}'
@@ -90,6 +91,7 @@ print(f'{"-" * 20:>20s}'
 
 print()
 
+# All the format for the horizontal lines on the left side of the screen
 print(f'{"Yield":20s}'
       f'{Yield:15.2f}'
       f'{Yield:15.2f}'
