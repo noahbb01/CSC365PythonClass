@@ -15,12 +15,15 @@ print()
 # get input from the user
 print("Per Acre")
 print('=' * 30)
+
+# Calculations used from the input of user
 Yield = int(input("Enter Yield (per Acre):\t"))
 Price = float(input("Enter Buying Price ($):\t"))
 Government_Payment = float(input("Enter Government Payment ($): "))
 Variable_Cost = float(input("Enter Variable Costs ($): "))
 overhead_cost = float(input("Enter Overhead Costs ($): "))
 
+# Calculations used to produce costs and other stuff
 total_revenue = (Yield * Price) + Government_Payment
 total_cost = Variable_Cost + overhead_cost
 earnings = round(total_revenue - total_cost, 3)
@@ -29,9 +32,12 @@ per_bushel_profit = round(Price - Break_Evan_Cost, 2)
 
 # Noah's code for the yield
 print('=' * 30)
+
+# used to get percentages from the input of user
 yield2 = Yield * .9
 yield3 = Yield * 1.1
 
+# Next 8 lines of code are used to display the correct calculations
 total_revenue2 = (yield2 * Price) + Government_Payment
 earnings2 = round(total_revenue2 - total_cost, 2)
 
@@ -44,7 +50,7 @@ per_bushel_profit2 = round(Price - Break_Evan_Cost2, 2)
 Break_Evan_Cost3 = round((total_cost - Government_Payment) / yield3, 2)
 per_bushel_profit3 = round(Price - Break_Evan_Cost3, 2)
 
-# Bryce Code for Cost165
+# Bryce Code for Cost
 print('=' * 30)
 print()
 total_revenue4 = round((Yield * Price) + Government_Payment, 2)
@@ -60,6 +66,7 @@ per_bushel_profit4 = round((Price - Break_Evan_Cost4), 2)
 Break_Evan_Cost5 = round((total_cost2 - Government_Payment) / Yield, 2)
 per_bushel_profit5 = round((Price - Break_Evan_Cost5), 2)
 
+# code for the formatting that we got from you debby
 print(f'{"":20s}'
       f'{"":15s}'
       f'{"10% Decrease":>15s}'
