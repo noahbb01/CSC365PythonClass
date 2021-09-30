@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CSC365PythonClass.iml" filepath="$PROJECT_DIR$/.idea/CSC365PythonClass.iml" />
       <module fileurl="file://$PROJECT_DIR$/break_even_calculator/.idea/break_even_calculator.iml" filepath="$PROJECT_DIR$/break_even_calculator/.idea/break_even_calculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../cover_crop_calculator.py/.idea/cover_crop_calculator.py.iml" filepath="$PROJECT_DIR$/../cover_crop_calculator.py/.idea/cover_crop_calculator.py.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cover_crop_calculator.py/.idea/cover_crop_calculator.py.iml" filepath="$PROJECT_DIR$/cover_crop_calculator.py/.idea/cover_crop_calculator.py.iml" />
     </modules>
   </component>
 </project>
