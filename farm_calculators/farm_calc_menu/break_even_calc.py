@@ -167,3 +167,7 @@ def break_even_calc():
           f'{per_bushel_profit3:15.2f}'
           f'{per_bushel_profit4:15.2f}'
           f'{per_bushel_profit5:15.2f}')
+
+
+if __name__ == '__main__':
+    break_even_calc()

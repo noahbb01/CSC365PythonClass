@@ -56,3 +56,7 @@ def water_allocations_calc():
 
     # lets the user know program has ended
     print('Bye!')
+
+
+if __name__ == '__main__':
+    water_allocations_calc()

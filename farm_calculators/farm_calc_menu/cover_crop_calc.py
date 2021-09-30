@@ -43,3 +43,7 @@ def cover_crop_calc():
     print("Estimated amount of cover crop needed:\t" + str(cover_crop))
     print()
     print("Bye")
+
+
+if __name__ == '__main__':
+    cover_crop_calc()
