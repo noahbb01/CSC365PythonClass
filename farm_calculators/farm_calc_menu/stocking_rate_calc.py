@@ -81,5 +81,6 @@ def stocking_rate_calc():
     print('Bye!')
 
 
+# checks to see if this is running without actually running it
 if __name__ == '__main__':
     stocking_rate_calc()

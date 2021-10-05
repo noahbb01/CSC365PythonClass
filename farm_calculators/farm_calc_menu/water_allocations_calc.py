@@ -58,5 +58,6 @@ def water_allocations_calc():
     print('Bye!')
 
 
+# checks to see if this is running without actually running it
 if __name__ == '__main__':
     water_allocations_calc()

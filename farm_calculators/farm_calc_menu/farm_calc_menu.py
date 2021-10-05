@@ -15,13 +15,14 @@ import cover_crop_calc as ccc
 import stocking_rate_calc as src
 import water_allocations_calc as wac
 
-__author__ = "Noah Beebe"
-__copyright__ = "Copyright 2021, CSC365"
-__credits__ = ["Noah Beebe"]
-__version__ = "1.0.1"
-__maintainer__ = "Noah Beebe"
-__email__ = "lonich01@wsc.edu"
-__status__ = "Production/Almost Finished"
+# the follow are module level metadata for the authorship information
+__author__ = 'Noah Beebe'
+__copyright__ = 'Copyright 2021, CSC365'
+__credits__ = ['Noah Beebe']
+__version__ = '1.0.1'
+__maintainer__ = 'Noah Beebe'
+__email__ = 'nobeeb01@wsc.edu'
+__status__ = 'Production/Almost Finished'
 
 # Global variable used for formatting in the code
 LINE_LENGTH = 40
@@ -36,8 +37,8 @@ def display_menu():
     print('2- Cover Crop Calculator ')
     print('3- Stocking Rate Calculator ')
     print('4- Water Allocations Calculator ')
-    print('5- Exit Program ')
-    print('0- Help ')
+    print('5- Help ')
+    print('0- Exit Program ')
     print()
 
 
@@ -56,13 +57,18 @@ def main():
             src.stocking_rate_calc()
         elif command == "4":
             wac.water_allocations_calc()
-        elif command == "5":
-            break
         elif command == "0":
+            break
+        # Supposed to show the docstring from each farm calc
+        elif command == "5":
             print('help')
         else:
             print('Not a valid command. Please try again.\n')
         print()
+
+        print("=" * LINE_LENGTH)
+        input('Press any key to continue... ')
+        print("=" * LINE_LENGTH)
 
     print('Bye!')
 

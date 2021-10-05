@@ -10,7 +10,15 @@ Break Even Calculator: use this program to figure out to break even on farming
 
 
 def break_even_calc():
-    # display a welcome message
+    """
+    Calculates the break even costs for you to break even with your farming between prices
+    it doesnt matter what you're farming, it is a universal calculator for farming needs.
+
+    Prompts user for how many acres they have, buying price, how much gov aid they receive, variable, and
+    overhead costs. Then it takes all the numbers and runs it through the formulas to calculate how much
+    you have to sell for to break even. Also, it shows the user how much with a 10% increase and decrease of yield
+    as well as a 10% increase and decrease in selling price.
+    """
     print("Break Even Calculator")
     print()
 
@@ -169,5 +177,6 @@ def break_even_calc():
           f'{per_bushel_profit5:15.2f}')
 
 
+# checks to see if this is running without actually running it
 if __name__ == '__main__':
     break_even_calc()
