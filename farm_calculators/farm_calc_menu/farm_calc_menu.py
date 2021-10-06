@@ -22,7 +22,7 @@ __credits__ = ['Noah Beebe']
 __version__ = '1.0.1'
 __maintainer__ = 'Noah Beebe'
 __email__ = 'nobeeb01@wsc.edu'
-__status__ = 'Production/Almost Finished'
+__status__ = 'Finished'
 
 # Global variable used for formatting in the code
 LINE_LENGTH = 40
@@ -57,15 +57,16 @@ def main():
             src.stocking_rate_calc()
         elif command == "4":
             wac.water_allocations_calc()
+        elif command == "5":
+            print('help')
         elif command == "0":
             break
         # Supposed to show the docstring from each farm calc
-        elif command == "5":
-            print('help')
         else:
             print('Not a valid command. Please try again.\n')
         print()
 
+        # Prompts the user back to the main menu screen
         print("=" * LINE_LENGTH)
         input('Press any key to continue... ')
         print("=" * LINE_LENGTH)

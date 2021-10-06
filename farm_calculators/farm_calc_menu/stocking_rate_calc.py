@@ -5,7 +5,20 @@ Created by: Noah Beebe
 Class: CSC365 Scripting Languages
 Date: 9/14/2021
 Stocking Rate Calculator: use this program to figure out the number of cattle to put in a pasture
+
+Updated: added range checkers on all range needed input from user.
+All docstring needed for validation is in the validation module
 """
+
+import validation
+
+__author__ = 'Noah Beebe'
+__copyright__ = 'Copyright 2021, CSC365'
+__credits__ = ['Noah Beebe']
+__version__ = '1.0.1'
+__maintainer__ = 'Noah Beebe'
+__email__ = 'nobeeb01@wsc.edu'
+__status__ = 'Finished'
 
 # used for the default number of = used to display a nice neat program
 LINE_LENGTH = 55
@@ -18,8 +31,9 @@ def stocking_rate_calc():
     print("=" * LINE_LENGTH)
 
     # The starting code from the author used to get the program running
+    # Added validation to check for the right range of input from user
     while True:
-        forage_sample = int(input('Enter the # of forage samples taken (Valid 1-20): '))
+        forage_sample = validation.get_range('Enter the # of forage samples taken ', low=1, high=20)
         # tells the user to basically enter an amount 1-20 for the number of samples
         if 0 <= forage_sample <= 20:
             break
@@ -52,7 +66,7 @@ def stocking_rate_calc():
 
     # while statement used to get a number 1-100 and all outside numbers are bogus
     while True:
-        util_rate = int(input('Enter the utilization rate (Valid 1-100): '))
+        util_rate = validation.get_range('Enter the utilization rate ', low=1, high=100)
         # prompts the user to enter a number 1-100
         if 0 <= util_rate <= 100:
             break
@@ -63,7 +77,7 @@ def stocking_rate_calc():
 
     # while statement used to get an accurate number of 0 lbs of cow to about 2000 ish pounds
     while True:
-        animal_unit_month = int(input('Enter the Animal Unit (1 AU = 1000lb) (Valid 1-2000): '))
+        animal_unit_month = validation.get_range('Enter the Animal Unit (1 AU = 1000lb) ', low=1, high=2000)
         if 0 <= animal_unit_month <= 2000:
             break
         else:

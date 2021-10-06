@@ -6,7 +6,20 @@ Class: CSC365 Scripting Languages
 Date: 9/9/2021
 Break Even Calculator: use this program to figure out to break even on farming
 
+Updated: as of 10/6/2021
+Added data validation code in the input processes of the program to ensure the user has entered the correct information
+to make the program work as intended.
 """
+
+import validation
+
+__author__ = 'Noah Beebe'
+__copyright__ = 'Copyright 2021, CSC365'
+__credits__ = ['Noah Beebe']
+__version__ = '1.0.1'
+__maintainer__ = 'Noah Beebe'
+__email__ = 'nobeeb01@wsc.edu'
+__status__ = 'Finished'
 
 
 def break_even_calc():
@@ -27,11 +40,12 @@ def break_even_calc():
     print('=' * 30)
 
     # Calculations used from the input of user
-    Yield = int(input("Enter Yield (per Acre):\t"))
-    Price = float(input("Enter Buying Price ($):\t"))
-    Government_Payment = float(input("Enter Government Payment ($): "))
-    Variable_Cost = float(input("Enter Variable Costs ($): "))
-    overhead_cost = float(input("Enter Overhead Costs ($): "))
+    # added validation to ensure user puts in a positive number
+    Yield = validation.get_num("Enter Yield (per Acre):\t")
+    Price = validation.get_positive_num("Enter Buying Price ($):\t")
+    Government_Payment = validation.get_positive_num("Enter Government Payment ($): ")
+    Variable_Cost = validation.get_num("Enter Variable Costs ($): ")
+    overhead_cost = validation.get_num("Enter Overhead Costs ($): ")
 
     # Calculations used to produce costs and other stuff
     total_revenue = (Yield * Price) + Government_Payment
