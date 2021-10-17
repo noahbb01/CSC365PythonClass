@@ -1,7 +1,12 @@
 # !/usr/bin/env python3
 
 """
-Blah Blah Blah
+Main page to display the start of the calculator. My program was being buggy like it would not like half the code i
+typed out and it kept running the same code even though i commented all instances of it out.
+
+i debug the program and it says my hotel room is callable but i did not change anything
+
+update: i got to run my hotel room. i just had to restart pycharm bc it was being dumb
 
 """
 
@@ -25,7 +30,7 @@ def menu_prompt():
 def main():
     menu_prompt()
     day_of_week()
-    hotel_room()
+    hotel_rooms()
 
 
 if __name__ == '__main__':

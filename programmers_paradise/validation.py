@@ -2,14 +2,17 @@
 
 __author__ = 'Noah Beebe'
 __copyright__ = 'Copyright 2021, CSC365'
+__credits__ = ['Noah Beebe']
 __version__ = '1.0.1'
-__status__ = 'Unknown'
+__maintainer__ = 'Noah Beebe'
+__email__ = 'nobeeb01@wsc.edu'
+__status__ = 'Finished'
 
 
-def get_range(prompt, low, high, data_type='str'):
+def get_range(prompt, low, high, data_type='int'):
     """
-    Defines the get range function that can be used universally. Basically it tells the user to enter a day
-    in the accessible range. and if they do not, then the definition keeps running until user enters a day.
+    Defines the get range function that can be used universally. Basically it tells the user to enter a number
+    in the accessible range. and if they do not, then the definition keeps running until user enters a number
     :param prompt:
     :param low:
     :param high:
@@ -19,13 +22,13 @@ def get_range(prompt, low, high, data_type='str'):
     while True:
         user_input = input(f'{prompt} (Range {low}-{high}): ')
 
-        if data_type == 'str':
-            day = int(user_input)
+        if data_type == 'int':
+            number = int(user_input)
         else:
-            day = float(user_input)
+            number = float(user_input)
 
-        if low < day <= high:
-            return day
+        if low <= number <= high:
+            return number
         else:
             print("Entry must be greater than", low, "and less than or equal to", high)
 
@@ -44,7 +47,7 @@ def get_positive_num(prompt, data_type='int'):
             number = float(user_input)
 
         if number > 0:
-            print()
+            print('Number is positive.')
             return True
         else:
             print('Entry must be greater than 0.')
@@ -91,11 +94,11 @@ def main():
     choice = "y"
     while choice.lower() == "y":
         # get input
-        valid_number = get_range(prompt='Enter float', low=0, high=1000, data_type='float')
-        print("Valid float = ", valid_number)
+        valid_number = get_range(prompt='', low=1, high=7, data_type='int')
+        print('', valid_number)
         print()
-        valid_number = get_range(prompt='Enter int', low=0, high=1000, data_type='int')
-        print("Valid integer = ", valid_number)
+        # valid_number = get_range(prompt='Enter int', low=0, high=1000, data_type='int')
+        # print("Valid integer = ", valid_number)
         print()
         valid_number = get_positive_num(prompt='Enter a positive number', data_type='int')
         print(valid_number)
