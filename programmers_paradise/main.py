@@ -22,6 +22,7 @@ __status__ = 'In Progress'
 LINE_LENGTH = 55
 
 
+# displays the menu function
 def menu_prompt():
     print('Python Programmer’s Paradise - Motel Booking System!')
     print('=' * LINE_LENGTH)
