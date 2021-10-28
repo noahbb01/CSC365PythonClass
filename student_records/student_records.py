@@ -35,7 +35,7 @@ def main():
         display_menu()
         command = input('Please enter a Menu #: ')
         if command == '1':
-            list(student_list)
+            lists(student_list)
         elif command == '2':
             add(student_list, next_student_id)
             next_student_id += 1
