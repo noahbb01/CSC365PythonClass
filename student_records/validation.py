@@ -37,10 +37,9 @@ def get_positive_num(prompt, data_type='int'):
     Defines the get positive number thing. Ensures whenever it is used that the user has inputted a positive number.
     code below validates if the number entered is a positive number
     """
-    while True:
-        user_input = input(f'{prompt}: ')
-
-        try:
+    try:
+        while True:
+            user_input = input(f'{prompt}: ')
             if data_type == 'int':
                 number = int(user_input)
             else:
@@ -50,8 +49,8 @@ def get_positive_num(prompt, data_type='int'):
                 return number
             else:
                 print('Entry must be greater than 0.')
-        except ValueError:
-            print('Invalid input: Please enter a number')
+    except ValueError:
+        print('Invalid input: Please enter a number')
 
 
 def get_string(prompt):

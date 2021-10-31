@@ -11,6 +11,11 @@ import validation
 
 
 def lists(student_list):
+    """
+
+    :param student_list:
+    :return:
+    """
     if len(student_list) == 0:
         print('There are no students.\n')
         return
@@ -47,6 +52,11 @@ def add(student_list, next_student_id):
 
 
 def delete(student_list):
+    """
+
+    :param student_list:
+    :return:
+    """
     if len(student_list) == 0:
         print('There are no students in the database.\n')
         return
@@ -85,9 +95,28 @@ def find_student_index(student_list, student_id):
     return -1
 
 
-def find_by_year(student_list):
-    year = int(input('Year: '))
-    for student in student_list:
-        if student[1] == year:
-            print(student[0] + ' was released in ' + str(year))
-    print()
+def update_student(student_list):
+    """
+    :param student_list:
+    :return:
+    """
+    if len(student_list) == 0:
+        print('There are no students to update.\n')
+        return
+
+    student_id = validation.get_positive_num('Please enter the Student ID you would like updated: ')
+
+    student_index = find_student_index(student_list, student_id)
+
+    if student_index == -1:
+        print(f'Student ID #{student_id} not found. ')
+        return
+
+    student = student_list[student_index]
+    confirm = input(f'Are you sure you want to update Student ID #{student_id} {student[1]} '
+                    f'{student[2]} (y=yes, n=no): ')
+
+    if confirm:
+        print(f'Student ID #{student_id} {student[1]} {student[2]} was updated.')
+    else:
+        print(f'Update was cancelled')
