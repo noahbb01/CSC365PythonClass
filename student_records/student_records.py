@@ -26,7 +26,7 @@ def display_menu():
     print('1 - List all students')
     print('2 - Add a student')
     print('3 - Delete a student')
-    print('4 - Find a student')
+    print('4 - Update a student')
     print('0 - Exit program')
     print()
 
