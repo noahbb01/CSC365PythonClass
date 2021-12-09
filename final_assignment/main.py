@@ -40,6 +40,7 @@ def main():
     """
     :return:
     """
+    display_rules()
 
 
 if __name__ == '__main__':
