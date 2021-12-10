@@ -216,7 +216,7 @@ while True:
 
     # Ask to play again
     print()
-    new_game = validation.get_yes_no("Would you like to play again? Enter 'y' or 'n': ")
+    new_game = input("Would you like to play again? Enter 'y' or 'n': ")
 
     if new_game[0].lower() == 'y':
         playing = True
