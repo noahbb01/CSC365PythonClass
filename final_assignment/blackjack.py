@@ -10,6 +10,7 @@ where all of the logic takes place. This is the brain power. This is the cadilla
 
 from class_code import *
 import main
+import validation
 
 __author__ = 'Noah Beebe'
 __copyright__ = 'Copyright 2021, CSC365'
@@ -36,7 +37,7 @@ def take_bet(chips):
     """
     while True:
         try:
-            chips.bet = int(input('How many chips would you like to bet?  '))
+            chips.bet = int(input('How many chips would you like to bet? (0-100) '))
         except ValueError:
             print("Sorry, a bet must be an integer!")
         else:
@@ -45,7 +46,7 @@ def take_bet(chips):
             else:
                 break
 
-            # taking hits#
+# taking hits#
 
 
 def hit(deck, hand):
@@ -116,3 +117,111 @@ def show_all(player, dealer):
     print("Dealer's Hand =", dealer.value)
     print("\nPlayer's Hand: ", *player.cards, sep='\n')
     print("Player's Hand = ", player.value)
+
+# added this is new
+# All of the following functions are used to handle game scenarios
+
+
+def player_busts(player, dealer, chips):
+    print("Player busts!")
+    chips.lose_bet()
+
+
+def player_wins(player, dealer, chips):
+    print("Player wins!")
+    chips.win_bet()
+
+
+def dealer_busts(player, dealer, chips):
+    print("Dealer busts!")
+    chips.win_bet()
+
+
+def dealer_wins(player, dealer, chips):
+    print("Dealer wins!")
+    chips.lose_bet()
+
+
+def push(player, dealer):
+    print("Dealer and Player tie! It's a push.")
+
+
+main.display_rules()
+
+# NOW FOR THE GAME
+while True:
+    # Print an opening statement
+
+    print('So without further a do lets get started with bets! ')
+    print()
+
+    # Create & shuffle the deck, deal two cards to each player
+    deck = Deck()
+    deck.shuffle()
+
+    player_hand = Hand()
+    player_hand.add_card(deck.deal())
+    player_hand.add_card(deck.deal())
+
+    dealer_hand = Hand()
+    dealer_hand.add_card(deck.deal())
+    dealer_hand.add_card(deck.deal())
+
+    # Set up the Player's chips
+    player_chips = Chips()
+
+    # Prompt the Player for their bet
+    take_bet(player_chips)
+
+    # Show cards (but keep one dealer card hidden)
+    show_some(player_hand, dealer_hand)
+
+    while playing:  # recall this variable from our hit_or_stand function
+
+        # Prompt for Player to Hit or Stand
+        hit_or_stand(deck, player_hand)
+
+        # Show cards (but keep one dealer card hidden)
+        show_some(player_hand, dealer_hand)
+
+        # If player's hand exceeds 21, run player_busts() and break out of loop
+        if player_hand.value > 21:
+            player_busts(player_hand, dealer_hand, player_chips)
+
+            break
+    # If Player hasn't busted, play Dealer's hand until Dealer reaches 17
+    if player_hand.value <= 21:
+
+        while dealer_hand.value < 17:
+            hit(deck, dealer_hand)
+
+        # Show all cards
+        show_all(player_hand, dealer_hand)
+
+        # Run different winning scenarios
+        if dealer_hand.value > 21:
+            dealer_busts(player_hand, dealer_hand, player_chips)
+
+        elif dealer_hand.value > player_hand.value:
+            dealer_wins(player_hand, dealer_hand, player_chips)
+
+        elif dealer_hand.value < player_hand.value:
+            player_wins(player_hand, dealer_hand, player_chips)
+
+        else:
+            push(player_hand, dealer_hand)
+
+    # Inform Player of their chips total
+    print("\nPlayers winnings stand at", player_chips.total)
+
+    # Ask to play again
+    print()
+    new_game = validation.get_yes_no("Would you like to play again? Enter 'y' or 'n': ")
+
+    if new_game[0].lower() == 'y':
+        playing = True
+        continue
+    else:
+        print('Thanks for playing! ')
+
+        break
