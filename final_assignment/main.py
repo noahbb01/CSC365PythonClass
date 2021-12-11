@@ -10,7 +10,6 @@ not run. I understand it a little bit im just gonna leave it because its kinda f
 
 """
 import blackjack as bj
-import class_code
 
 __author__ = 'Noah Beebe'
 __copyright__ = 'Copyright 2021, CSC365'

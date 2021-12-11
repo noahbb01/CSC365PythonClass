@@ -3,7 +3,7 @@
 Takes user input and validates the number
 """
 
-_author_ = 'Donaven Harrington & Noah Beebe'
+_author_ = 'Noah Beebe'
 _date_ = 'November 1, 2021'
 _status_ = 'In Progress'
 
