@@ -4,9 +4,7 @@
 Main code in the blackjack program where the Display rules portion of code is being housed at. I understand that
 it was supposed to include more than one player to play against the dealer but i found it much easier to just do one
 player play against the dealer. All values are held except for the name of the player. It is simply 'Player vs. Dealer'
-For some reason im just curious on is that i do not have anything called in main and it says my imports are not used
-but if i leave them like how they are now the code runs as intended. But if i delete the 'unused imports', the code does
-not run. I understand it a little bit im just gonna leave it because its kinda funny to me anyways.
+
 
 """
 from blackjack import *
@@ -36,9 +34,16 @@ def display_rules():
 
 
 def get_player_names():
-    while player > 3:
-        player_names = input(str('Please enter names of who is playing (Max # of players = 2): '))
-        players['playerInfo'].append(player_names)
+    """
+    used to get names from the user. then appends the names to the dictionary list in the blackjack module
+    :return:
+    """
+    player = 0
+    while player < 4:
+        player_names = input(str('Please enter names of who is playing (Max # of players = 4): '))
+        players['Players'].append(player_names)
+        player += 1
+    print()
 
 
 def main():
@@ -46,7 +51,7 @@ def main():
     :return:
     """
     display_rules()
-   # get_player_names()
+    get_player_names()
     play_game()
 
 
