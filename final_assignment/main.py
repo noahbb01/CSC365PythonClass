@@ -9,7 +9,7 @@ but if i leave them like how they are now the code runs as intended. But if i de
 not run. I understand it a little bit im just gonna leave it because its kinda funny to me anyways.
 
 """
-import blackjack as bj
+from blackjack import *
 
 __author__ = 'Noah Beebe'
 __copyright__ = 'Copyright 2021, CSC365'
@@ -35,11 +35,19 @@ def display_rules():
     print(f'=========================================================================')
 
 
+def get_player_names():
+    while player > 3:
+        player_names = input(str('Please enter names of who is playing (Max # of players = 2): '))
+        players['playerInfo'].append(player_names)
+
+
 def main():
     """
     :return:
     """
-   # display_rules()
+    display_rules()
+   # get_player_names()
+    play_game()
 
 
 if __name__ == '__main__':
